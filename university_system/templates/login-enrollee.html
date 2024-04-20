@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <main>
+      <div class="login-form">
+        <div class="login-type-choice">
+          <a
+            href="{% url 'login_enrollee' %}"
+            class="login-for-enrollee"
+            style="color: #fff !important; background-color: #861919"
+            >Абитуриент</a
+          >
+          <a href="{% url 'login_commission' %}" class="login-for-comm">Коммисия</a>
+        </div>
+        <form action="{% url 'login_enrollee' %}" method="POST">
+          {% csrf_token %}
+          <div class="input-box">
+            <input type="email" placeholder="E-mail" name="email"/>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Сыр сөз" name="password"/>
+          </div>
+          <button type="submit">Кирүү</button>
+          <a href="{% url 'signup' %}">Регистрация</a>
+        </form>
+      </div>
+    </main>
+{% endblock %}

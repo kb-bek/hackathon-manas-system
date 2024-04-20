@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+    <main class="info-section">
+      <nav>
+        <ul>
+          <li >
+            <a href="" >
+              
+              Mаалымат
+            </a>
+          </li>
+          <li style="background-color: #861919">
+            <img src="{% static 'img/ph_graduation-cap-light.png' %}" alt="" style="margin-right: 5px;"/>
+            <a href="" style="color: #fff !important">Жеке бөлмө</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="user-info">
+        <div class="user-name">
+          {% if user.is_authenticated %}
+          <span>
+            <img src="{% static 'img/iconoir_profile-circle.png' %}" alt="" />
+            {{ user.first_name }} {{ user.last_name }}
+          </span>
+          {% endif %}
+          <form method="POST" action="{% url 'signout' %}" style="position:absolute; right: 20px;">
+              {% csrf_token %}
+            <button type="submit" style="padding: 7px 30px; border:0; border-radius: 7px; color:#FFF; background-color:#861919">Чыгуу</button>
+          </form>
+        </div>
+        <div class="applications-exam">
+          <div class="application">
+            <div>
+              <h3 class="heading-start">Регистрация началась!</h3>
+              <button>Колледж</button>
+            </div>
+            <p>
+              Для поступающих на базе основного общего образования (9 классов)
+            </p>
+          </div>
+          <div class="application">
+            <div class="heading-start">
+              <h3 class="heading-start">Регистрация началась!</h3>
+              <button>Бакалавриат</button>
+            </div>
+            <p>
+              Для поступающих на базе среднего общего или среднего
+              профессионального образования (11 классов или колледж)
+            </p>
+          </div>
+          <div class="application">
+            <div class="heading-start">
+              <h3 class="heading-start">Регистрация началась!</h3>
+              <button>Магистратура</button>
+            </div>
+            <p>
+              Для поступающих на базе высшего профессионального образования
+              (бакалавриат/специалитет или магистратура)
+            </p>
+          </div>
+          <div class="application">
+            <div class="heading-start">
+              <h3 class="heading-start">Регистрация началась!</h3>
+              <button>Докторантура</button>
+            </div>
+            <p>
+              Для поступающих на базе высшего профессионального образования
+              (магистратура/специалитет или докторантура)
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+{% endblock %}

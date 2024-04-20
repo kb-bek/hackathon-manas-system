@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/auth.style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/personal-room.style.css' %}" />
+    <title></title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="{% static 'img/logoKtmu.png' %}" alt="" class="logo" />
+      <img src="{% static 'img/heading-img.png' %}" alt="" class="heading-img">
+      <div>
+        <span><img src="{% static 'img/ph_phone.png' %}" alt="">+996 998 100 300</span>
+        <span><img src="{% static 'img/oui_email.png' %}  " alt="">bilgi.gensek@manas.edu.kg</span>
+      </div>
+    </header>
+  {% block content %}{% endblock %}
+  </body>
+</html>
